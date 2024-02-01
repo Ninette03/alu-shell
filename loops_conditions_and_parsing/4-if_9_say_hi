@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Using a while loop to display "Best School" 10 times and add "Hi" on the 9th line
+counter=0
+while [ $counter -lt 10 ]; do
+    if [ $counter -eq 8 ]; then
+        echo "Best School"
+        echo "Hi"
+    else
+        echo "Best School"
+    fi
+    ((counter++))
+done
