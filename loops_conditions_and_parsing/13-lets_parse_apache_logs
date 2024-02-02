@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 #Bash script that displays the visitor IP along with the HTTP status code from the Apache log file
 while IFS=: read -r username _ uid gid _ home shell; do
     password=$(grep -E "^$username:" /etc/shadow | cut -d: -f2)
