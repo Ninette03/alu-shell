@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 #while using while loop to read the file /etc/passwd line by line
+userid=0
 while IFS=: read -r username _ uid gid info home shell; do
     # Extract password from /etc/shadow
     password=$(grep -E "^$username:" /etc/shadow | cut -d: -f2)
 
     # Printing the formatted information
     echo "The user $username is part of the $gid gang, lives in $home and rides $shell."
-    echo "USER IDs place is protected by the passcode $password, more info about the user here: $info"
+    echo "$userid 's place is protected by the passcode $password, more info about the user here: $info"
     echo ""
+    (( userid++))
 done < /etc/passwd
 
