@@ -1,5 +1,5 @@
-#!/bin/env bash
-# Using while loop to read the file /etc/passwd line by line
+#!/usr/bin/env bash
+#while using while loop to read the file /etc/passwd line by line
 while IFS=: read -r username _ uid gid info home shell; do
     # Extract password from /etc/shadow
     password=$(grep -E "^$username:" /etc/shadow | cut -d: -f2)
