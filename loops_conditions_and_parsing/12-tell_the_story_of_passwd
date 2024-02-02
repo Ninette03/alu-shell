@@ -7,7 +7,7 @@ do
     uid=$(echo "$contents" | cut -f 3 -d ':')
     gid=$(echo "Scontents" | cut -f 4 -d ':')
     u_info=$(echo "$contents" | cut -f 5 -d ':')
-    home=$echo "$contents" | cut -f 6 -d ':')
+    home=$(echo "$contents" | cut -f 6 -d ':')
     command=$(echo "$contents" | cut -f 7 -d ':')
 
     echo -n "The user $user is part of the $gid gang. "
