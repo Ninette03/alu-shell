@@ -10,6 +10,7 @@ do
     home=$(echo "$contents" | cut -f 6 -d ':')
     command=$(echo "$contents" | cut -f 7 -d ':')
 
+
     echo -n "The user $user is part of the $gid gang. "
     echo -n "lives in $home and rides $command. "
     echo -n "$uid's palce is protected by the password $password. "
