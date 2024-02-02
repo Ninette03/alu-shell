@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #while using while loop to read the file /etc/passwd line by line
 userid=0
-while IFS=: read -r username _ gid info home shell; do
+while IFS=: read -r username _ _ gid info home shell; do
     # Extract password from /etc/shadow
 
     # Printing the formatted information
