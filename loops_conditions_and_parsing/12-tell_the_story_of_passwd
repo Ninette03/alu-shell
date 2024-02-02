@@ -13,4 +13,4 @@ while IFS= read -r contents do
     echo -n "lives in $home and rides $command. "
     echo -n "$uid's palce is protected by the password $password. "
     echo "more info about the user here: $u-info"
-done < "/etc/passwd"
+done </etc/passwd
