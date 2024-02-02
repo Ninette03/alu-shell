@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 #Write a Bash script that displays the content of the file /etc/passwd, using the while loop + IFS
-while IFS=: read -r username _ uid gid _ home shell; do
-    password=$(grep -E "^$username:" /etc/shadow | cut -d: -f2)
-    info=$(grep -E "^$username:" /etc/passwd | cut -d: -f5)
+while IFS= read -r contents do
+    user=$(echo "$contents" | cut -f 1 -d ':')
+    password=$(echo "$contents" | cut -f 2 -d ':')
+    uid=$(echo "$contents" | cut -f 3 -d ':')
+    gid=$(echo "Scontents" | cut -f 4 -d ':')
+    u_info=$(echo "$contents" | cut -f 5 -d ':')
+    home=$echo "$contents" | cut -f 6 -d ':')
+    command=$(echo "$contents" | cut -f 7 -d ':')
 
-    echo "The user $username is part of the $gid gang, lives in $home and rides $shell. USER ID's place is protected by the passcode $password, more info about the user here: $info"
-done < /etc/passwd
+    echo -n "The user $user is part of the $gid gang. "
+    echo -n "lives in $home and rides $command. "
+    echo -n "$uid's palce is protected by the password $password. "
+    echo "more info about the user here: $u-info"
+done < "/etc/passwd"
