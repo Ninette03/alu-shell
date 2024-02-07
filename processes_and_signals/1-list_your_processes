@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #Bash script that displays a list of currently runing processes
-ps aux
+echo "USER       PID  PPID  CPU  MEM   COMMAND"
+ps -eo user,pid,ppid,pcpu,pmem,cmd --forest
