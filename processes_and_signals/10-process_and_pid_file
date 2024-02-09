@@ -4,30 +4,24 @@ sigterm_handler() {
     echo "I hate the kill command"
 }
 
-# Function to handle SIGINT signal
 sigint_handler() {
     echo "Y U no love me?!"
 }
 
-# Function to handle SIGQUIT signal
 sigquit_handler() {
     echo "Deleting PID file and terminating..."
     rm -f /var/run/myscript.pid
-    exit 0
+    exit 
 }
 
-# Registering signal handlers
 trap 'sigterm_handler' SIGTERM
 trap 'sigint_handler' SIGINT
 trap 'sigquit_handler' SIGQUIT
 
-# Writing PID to file
 echo $$ > /var/run/myscript.pid
 
-# Displaying message indefinitely
 echo "To infinity and beyond indefinitely"
 
-# Infinite loop
 while true; do
     sleep 1
 done
