@@ -1,6 +1,7 @@
-#!/usr/bin/bash env 
-#Manage my files
-while [[ 1 -eq 1 ]]; do
-echo "I am alive!" >> /tmp/my_process
-sleep 2
+#!/usr/bin/env bash
+#Display I am alive every two seconds
+while :                                            
+do                                                 
+        echo "I am alive!" >> /tmp/my_process      
+        sleep 2                                    
 done
